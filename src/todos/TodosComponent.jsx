@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Profile from "../components/profile/Profile.tsx";
 
 export default function MyApp() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [editIndex, setEditIndex] = useState(null);
-  const url = useState("https://i.imgur.com/MK3eW3Am.jpg");
+
   function addTodo(e) {
     e.preventDefault();
     if (newTodo.length === 0) {
@@ -18,7 +17,7 @@ export default function MyApp() {
 
   return (
     <div className="text-center d-flex flex-column justify-content-center">
-      <Profile src={url} alt={"some text"} />
+
       <div className="col-12 d-flex flex-column justify-content-center align-items-center align-content-center">
         <h1>comeback 🔥</h1>
 
