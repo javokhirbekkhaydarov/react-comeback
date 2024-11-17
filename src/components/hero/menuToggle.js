@@ -11,7 +11,7 @@ export default function ToggleImage({ close, burger, show, onClick }) {
       <div
         className={`absolute inset-0 transition-transform duration-300 origin-center ${show ? "opacity-0 rotate-180" : "opacity-100 rotate-0 "}`}
       >
-        <Image src={burger} alt="burger" />
+        <Image src={burger} alt="burger_click" />
       </div>
     </div>
   );
