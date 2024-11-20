@@ -17,13 +17,11 @@ export default function MyApp() {
 
   return (
     <div className="text-center d-flex flex-column justify-content-center">
-
       <div className="col-12 d-flex flex-column justify-content-center align-items-center align-content-center">
         <h1>comeback 🔥</h1>
-
         <form className="col-6" onSubmit={addTodo}>
           <input
-            className="form-control"
+            className="border-2 rounded-l outline-none bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
             type="text"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}

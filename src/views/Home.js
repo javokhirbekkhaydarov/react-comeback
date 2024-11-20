@@ -3,6 +3,8 @@ import { useState } from "react";
 import ToggleImage from "../components/hero/menuToggle";
 import burger from "../assets/icons/burger.svg";
 import close from "../assets/icons/close.svg";
+import { Link } from "react-router-dom";
+
 export default function Home() {
   const url = useState("https://i.imgur.com/MK3eW3Am.jpg");
   const [show, setShow] = useState(false);
@@ -22,7 +24,9 @@ export default function Home() {
     <>
       <div className="home flex flex-col">
         <div className="flex justify-between items-center bg-blue-200 p-2">
-          <Profile src={url} alt={"some text"} />
+          <Link to="/">
+            <Profile src={url} alt={"some text"} />
+          </Link>
           <ToggleImage
             onClick={() => setShow(!show)}
             close={close}
