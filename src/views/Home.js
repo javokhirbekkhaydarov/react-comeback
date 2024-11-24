@@ -19,6 +19,11 @@ export default function Home() {
       url: "about",
       id: 2,
     },
+    {
+      name: "BookShop",
+      url: "book",
+      id: 3,
+    },
   ];
   return (
     <>
@@ -36,9 +41,9 @@ export default function Home() {
         </div>
         {show && (
           <div className="sidebar">
-            <ul>
+            <ul className='flex flex-col gap-2'>
               {links.map((link) => (
-                <li key={link.id}>{link.name} </li>
+                <Link to={'/'+ link.url} key={link.id}>{link.name} </Link>
               ))}
             </ul>
           </div>
