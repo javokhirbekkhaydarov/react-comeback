@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "SF Pro Display", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+}
+
+.App {
+  transition: all .3s ease-in-out
+}
+
+.library-active {
+  margin-left: 30%;
+}
+@import "player";
+@import "song";
+@import "nav";
+@import "library";

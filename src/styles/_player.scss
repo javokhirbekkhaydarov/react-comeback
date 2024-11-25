@@ -1,0 +1,45 @@
+.player {
+  min-height: 20hv;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-control {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+
+  text-align: center;
+
+  input {
+    width: 100%;
+    padding: 1rem 0rem;
+  }
+  p {
+    padding: 1rem;
+  }
+}
+
+.player-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 30%;
+  svg {
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 95%;
+  }
+  .player-control {
+    width: 50%;
+  }
+}

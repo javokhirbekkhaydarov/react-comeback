@@ -6,10 +6,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BookList from "./components/books/BookList";
 import Capital from "./components/capital/theCapital";
+import SpotifyHome from "./views/SpotifyHome";
+import './styles/app.scss'
 function App() {
   return (
     <Router>
-      <Home />
+     <SpotifyHome />
       <Routes>
         <>
           {/*<Route path="/" element={<Home />} />*/}

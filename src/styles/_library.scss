@@ -1,0 +1,73 @@
+//scrollbal
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  width: 5px;
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #f894a7;
+  border-radius: 20px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(252, 42, 164);
+}
+
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ff6984;
+  height: 100%;
+  width: 20rem;
+  overflow-y: scroll;
+  box-shadow: 2px 2px 40px #ee738a;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  h2 {
+    padding: 2rem;
+  }
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: #f53054;
+  }
+  img {
+    width: 30%;
+  }
+  .song-description {
+    padding-left: 1rem;
+    h2 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.selected {
+  background: rgb(245, 26, 66);
+}
+
+.active-library {
+  transform: translate(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
