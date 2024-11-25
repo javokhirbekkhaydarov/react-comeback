@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BookList from "./components/books/BookList";
+import Capital from "./components/capital/theCapital";
 function App() {
   return (
     <Router>
@@ -15,6 +16,8 @@ function App() {
           <Route path="/todos" element={<MyApp />} />
           <Route path="/chat" element={<ChatComponent />} />
           <Route path="/book" element={<BookList />} />
+            <Route path="/capital" element={<Capital />} />
+
         </>
       </Routes>
     </Router>

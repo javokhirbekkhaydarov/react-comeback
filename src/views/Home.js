@@ -24,6 +24,11 @@ export default function Home() {
       url: "book",
       id: 3,
     },
+    {
+      name: "Capital",
+      url: "capital",
+      id: 4,
+    },
   ];
   return (
     <>
