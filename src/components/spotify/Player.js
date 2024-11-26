@@ -3,9 +3,9 @@ import {
   faAngleLeft,
   faAngleRight,
   faPlay,
+  faPause,
 } from "@fortawesome/free-solid-svg-icons";
-import { useRef, useState } from "react";
-import song from "./Song";
+import { useEffect, useRef, useState } from "react";
 
 const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
   const audioTag = useRef(null);
@@ -18,6 +18,20 @@ const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
       setIsPlaying(!isPlaying);
     }
   };
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === "Space") {
+        event.preventDefault();
+        playSong();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isPlaying]);
   const timeUpdate = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
@@ -36,12 +50,25 @@ const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
   };
+  const dragAudio = (e) => {
+    audioTag.current.currentTime = e.target.value;
+    setSongInfo({
+      ...songInfo,
+      currentTime: e.target.value,
+    });
+  };
 
   return (
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input type="range" />
+        <input
+          onChange={dragAudio}
+          type="range"
+          value={songInfo.currentTime}
+          max={songInfo.duration}
+          min=""
+        />
         <p>{getTime(songInfo.duration)}</p>
       </div>
       <div className="player-control">
@@ -50,11 +77,12 @@ const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
           onClick={playSong}
           size="2xl"
           className="play"
-          icon={faPlay}
+          icon={!isPlaying ? faPlay : faPause}
         />
         <FontAwesomeIcon size="2xl" className="right" icon={faAngleRight} />
       </div>
       <audio
+        className="hidden"
         onTimeUpdate={timeUpdate}
         src={currentSong.audio}
         onLoadedMetadata={timeUpdate}

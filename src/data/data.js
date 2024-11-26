@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 function chillHop() {
     return [
         {
-            name: "Sunset Vibes",
-            cover: "https://i.scdn.co/image/ab67616d0000b273e1711a91a0feaf0db417b973",
-            artist: "DJ Chill",
-            audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+            name: "Sevgisi yolg'onim",
+            cover: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/fa/27/8d/fa278d93-220a-5774-15fe-9774c2c397d7/8721056455218.png/600x600bf-60.jpg",
+            artist: "Botir Qodirov",
+            audio: "https://uzhits.net/upload/files/2023-12/botir-qodirov-sevgisi-yolgonim_(uzhits.net).mp3",
             color: ["#FF9F45", "#FC5C65"],
             id: uuidv4(),
             active: true,
