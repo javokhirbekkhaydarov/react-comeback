@@ -25,7 +25,7 @@ export default function SpotifyHome() {
   };
   return (
     <>
-      <div className="app">
+      <div className={ `app ${libraryStatus ? 'library-active' : null} `}>
         <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
         <Library
             libraryStatus={libraryStatus}

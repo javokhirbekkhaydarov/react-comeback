@@ -82,6 +82,7 @@ const PLayer = ({
           value={songInfo.currentTime}
           max={songInfo.duration || 0}
           min=""
+          className={'rang-input'}
         />
         <p>{getTime(songInfo.duration)}</p>
       </div>

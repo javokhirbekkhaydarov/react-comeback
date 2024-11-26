@@ -20,6 +20,25 @@ h3 {
 .library-active {
   margin-left: 30%;
 }
+body {
+  text-align: center;
+  background: #fc5c7d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+                  to left,
+                  #5dc5fe,
+                  #a696f9,
+                  #f564e4,
+                  #fc5c7d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+                  to left,
+                  #5dc5fe,
+                  #a696f9,
+                  #f564e4,
+                  #fc5c7d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 @import "./_player";
 @import "./_song";
 @import "./_nav";
