@@ -12,12 +12,22 @@ const PLayer = ({
   setCurrentSong,
   currentSong,
   isPlaying,
+  setIsPlaying,
   audioTag,
   songs,
   setSongInfo,
   songInfo,
   timeUpdate,
 }) => {
+  const playSongHandler = () => {
+    if (!isPlaying) {
+      audioTag.current.play();
+      setIsPlaying(!isPlaying);
+    } else {
+      audioTag.current.pause();
+      setIsPlaying(!isPlaying);
+    }
+  };
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.code === "Space") {
@@ -83,7 +93,7 @@ const PLayer = ({
           icon={faAngleLeft}
         />
         <FontAwesomeIcon
-          onClick={playSong}
+          onClick={playSongHandler}
           size="2xl"
           className="play"
           icon={!isPlaying ? faPlay : faPause}
