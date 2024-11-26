@@ -7,8 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 
-const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
-  const audioTag = useRef(null);
+const PLayer = ({ currentSong, isPlaying, setIsPlaying , audioTag , setSongInfo , songInfo , timeUpdate }) => {
   const playSong = () => {
     if (!isPlaying) {
       audioTag.current.play();
@@ -32,19 +31,8 @@ const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isPlaying]);
-  const timeUpdate = (e) => {
-    const current = e.target.currentTime;
-    const duration = e.target.duration;
-    setSongInfo({
-      ...songInfo,
-      currentTime: current,
-      duration,
-    });
-  };
-  const [songInfo, setSongInfo] = useState({
-    currentTime: null,
-    duration: null,
-  });
+
+
   const getTime = (time) => {
     return (
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
@@ -66,7 +54,7 @@ const PLayer = ({ currentSong, isPlaying, setIsPlaying }) => {
           onChange={dragAudio}
           type="range"
           value={songInfo.currentTime}
-          max={songInfo.duration}
+          max={songInfo.duration || 0 }
           min=""
         />
         <p>{getTime(songInfo.duration)}</p>
