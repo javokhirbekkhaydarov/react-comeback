@@ -6,6 +6,7 @@ const Library = ({
   isPlaying,
   setSongs,
   libraryStatus,
+                   setIsPlaying,
 }) => {
   return (
     <>
@@ -19,6 +20,7 @@ const Library = ({
               setSongs={setSongs}
               song={song}
               isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
               setCurrentSong={setCurrentSong}
               audioTag={audioTag}
               currentSong={song}

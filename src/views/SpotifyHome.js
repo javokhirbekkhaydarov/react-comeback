@@ -34,6 +34,7 @@ export default function SpotifyHome() {
           setCurrentSong={setCurrentSong}
           setSongs={setSongs}
           audioTag={audioTag}
+            setIsPlaying={setIsPlaying}
         />
         <Song currentSong={currentSong} />
         <PLayer
@@ -44,6 +45,8 @@ export default function SpotifyHome() {
           timeUpdate={timeUpdate}
           setSongInfo={setSongInfo}
           songInfo={songInfo}
+          songs={songs}
+          setCurrentSong={setCurrentSong}
         />
       </div>
     </>
