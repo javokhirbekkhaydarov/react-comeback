@@ -1,20 +1,22 @@
+import {Link} from "react-router-dom";
+
 const Product = ({item , addToCart ,formatNumber}) => {
     return (
         <div
             key={item.id}
             className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
         >
-            <div className="h-56 w-full">
-                <a href="#">
+            <div className="h-56 w-full" >
+
                     <img
                         className="mx-auto w-[254px] h-full object-cover rounded-lg"
                         src={item.image}
                         alt=""
                     />
-                </a>
+
             </div>
             <div className="pt-6">
-                <div className="mb-4 flex items-center justify-between gap-4">
+                <Link to={ `product/${item.id}`} className="mb-4 flex items-center justify-between gap-4">
                       <span className="me-2 rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
                         {" "}
                           {item.name}{" "}
@@ -96,14 +98,14 @@ const Product = ({item , addToCart ,formatNumber}) => {
                             ></div>
                         </div>
                     </div>
-                </div>
+                </Link>
 
-                <a
-                    href="#"
+                <Link to={ `product/${item.id}`}
+
                     className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
                 >
                     {item.description.slice(0, 90)}
-                </a>
+                </Link>
 
                 <div className="mt-2 flex items-center gap-2">
                     <div className="flex items-center">

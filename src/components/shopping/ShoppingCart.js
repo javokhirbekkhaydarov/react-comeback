@@ -71,14 +71,14 @@ function ShoppingCart() {
           </h2>
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
             {furniture.slice(2).map((item) => {
-              return <Product item={item} addToCart={addToCart} formatNumber={formatNumber} />;
+              return <Product item={item} key={item.id} addToCart={addToCart} formatNumber={formatNumber} />;
             })}
           </div>
           <h2 className="text-xl font-semibold text-gray-900 text-white sm:text-2xl">
             Shopping Cart
           </h2>
           {cart.map((item, index) => {
-            return <CartProduct item={item} index={index} updateQuantity={updateQuantity} formatNumber={formatNumber} removeFromCart={removeFromCart}/>;
+            return <CartProduct key={index} item={item} index={index} updateQuantity={updateQuantity} formatNumber={formatNumber} removeFromCart={removeFromCart}/>;
           })}
         </div>
       </section>

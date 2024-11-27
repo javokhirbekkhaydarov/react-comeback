@@ -9,14 +9,16 @@ import Capital from "./components/capital/theCapital";
 import SpotifyHome from "./views/SpotifyHome";
 import "./styles/app.scss";
 import Layout from "./views/Layout";
+import ProductDetails from "./components/shopping/ProductDetails";
 function App() {
   return (
     <Router>
       {/*<SpotifyHome />*/}
-      <Layout />
+      {/*<Layout />*/}
       <Routes>
         <>
-          {/*<Route path="/" element={<Home />} />*/}
+          <Route path="/" element={<Layout />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/todos" element={<MyApp />} />
           <Route path="/chat" element={<ChatComponent />} />
           <Route path="/book" element={<BookList />} />
