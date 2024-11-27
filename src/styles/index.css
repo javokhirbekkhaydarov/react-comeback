@@ -6,3 +6,6 @@
 input {
     border: 1px solid #dedede !important;
 }
+* {
+    scroll-behavior: smooth;
+}
