@@ -10,6 +10,8 @@ import SpotifyHome from "./views/SpotifyHome";
 import "./styles/app.scss";
 import Layout from "./views/Layout";
 import ProductDetails from "./components/shopping/ProductDetails";
+import ELearningView from "./views/ELearningView";
+import ShoppingCart from "./components/shopping/ShoppingCart";
 function App() {
   return (
     <Router>
@@ -17,7 +19,7 @@ function App() {
       {/*<Layout />*/}
       <Routes>
         <>
-          <Route path="/" element={<Layout />} />
+          <Route path="/" element={<ShoppingCart />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/todos" element={<MyApp />} />
           <Route path="/chat" element={<ChatComponent />} />
