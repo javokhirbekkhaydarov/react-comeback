@@ -7,7 +7,7 @@ import CartProduct from "./CartProduct";
 import toast, { Toaster } from "react-hot-toast";
 
 function ShoppingCart() {
-  const cart = useSelector((state) => state.cart); // Get cart state from Redux
+  const cart = useSelector((state) => state.cart) || [];
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
