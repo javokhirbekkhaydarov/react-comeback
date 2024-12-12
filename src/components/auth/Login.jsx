@@ -16,7 +16,7 @@ export function Login({ setIsLoggedIn }) {
 
   return (
     <section className="grid text-center h-screen items-center p-8">
-      <div>
+      <div className={'bg-white max-w-xxl m-auto p-20 rounded-lg'}>
         <Typography variant="h3" color="gray" className="mb-2">
           Sign In
         </Typography>
@@ -100,7 +100,7 @@ export function Login({ setIsLoggedIn }) {
           <Button
             variant="outlined"
             size="lg"
-            className="mt-6 flex h-12 items-center justify-center gap-2"
+            className="mt-6 text-white flex h-12 items-center justify-center gap-2"
             fullWidth
           >
             <img

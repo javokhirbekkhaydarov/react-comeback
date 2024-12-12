@@ -10,7 +10,7 @@ export function Login() {
 
     return (
         <section className="grid text-center h-screen items-center p-8">
-            <div>
+            <div className={'bg-white max-w-xxl m-auto p-20 rounded-lg'}>
                 <Typography variant="h3" color="gray" className="mb-2">
                     Sign Up
                 </Typography>

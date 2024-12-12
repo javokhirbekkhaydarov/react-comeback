@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route
               path="/"
-              element={isLoggedIn ? <ShoppingCart /> : <Navigate to="/auth/login" />}
+              element={isLoggedIn ? <ShoppingCart setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/auth/login" />}
           />
           <Route path="/auth/login"  element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/auth/register" element={<Register />} />

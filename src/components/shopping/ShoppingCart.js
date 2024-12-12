@@ -1,12 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart, updateQuantity } from "../../redux/reducers/cartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+} from "../../redux/reducers/cartSlice";
 import furniture from "../../data/mebels";
 import Product from "./Product";
 import CartProduct from "./CartProduct";
 import toast, { Toaster } from "react-hot-toast";
+import  Navbar  from "../../components/eLearning/Navbar";
 
-function ShoppingCart() {
+function ShoppingCart({setIsLoggedIn}) {
   const cart = useSelector((state) => state.cart) || [];
   const dispatch = useDispatch();
 
@@ -40,39 +45,40 @@ function ShoppingCart() {
   }
 
   return (
-      <div>
-        <section className="py-8 antialiased dark:bg-gray-900 md:py-16">
-          <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <h2 className="text-xl font-semibold text-gray-900 text-white sm:text-2xl">
-              Products
-            </h2>
-            <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-              {furniture.slice(2).map((item) => (
-                  <Product
-                      item={item}
-                      key={item.id}
-                      addToCart={handleAddToCart}
-                      formatNumber={formatNumber}
-                  />
-              ))}
-            </div>
-            <h2 className="text-xl font-semibold text-gray-900 text-white sm:text-2xl">
-              Shopping Cart
-            </h2>
-            {cart.map((item, index) => (
-                <CartProduct
-                    key={index}
-                    item={item}
-                    index={index}
-                    updateQuantity={handleUpdateQuantity}
-                    formatNumber={formatNumber}
-                    removeFromCart={handleRemoveFromCart}
-                />
+    <div>
+      <Navbar setIsLoggedIn={setIsLoggedIn} />
+      <section className="py-8 antialiased dark:bg-gray-900 md:py-16">
+        <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+          <h2 className="text-xl font-semibold text-gray-900 text-white sm:text-2xl">
+            Products
+          </h2>
+          <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
+            {furniture.slice(2).map((item) => (
+              <Product
+                item={item}
+                key={item.id}
+                addToCart={handleAddToCart}
+                formatNumber={formatNumber}
+              />
             ))}
           </div>
-        </section>
-        <Toaster />
-      </div>
+          <h2 className="text-xl font-semibold text-gray-900 text-white sm:text-2xl">
+            Shopping Cart
+          </h2>
+          {cart.map((item, index) => (
+            <CartProduct
+              key={index}
+              item={item}
+              index={index}
+              updateQuantity={handleUpdateQuantity}
+              formatNumber={formatNumber}
+              removeFromCart={handleRemoveFromCart}
+            />
+          ))}
+        </div>
+      </section>
+      <Toaster />
+    </div>
   );
 }
 
